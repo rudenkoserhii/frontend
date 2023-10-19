@@ -1,41 +1,56 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    display: flex;
-    align-items: center;
-    gap: ${p => p.theme.space[4]}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 `;
 
 export const Text = styled.p`
-    font-weight: ${p => p.theme.fontWeights.bold};
+  display: inline-block;
+
+  height: 100%;
+  width: fit-content;
+  padding: 11px 20px;
+
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.375;
+  letter-spacing: 1;
+  font-family: "Merriweather", serif;
+  font-size: ${(p) => p.theme.fontSizes.s};
+  font-weight: ${(p) => p.theme.fontWeights.bold};
+  color: ${(p) => p.theme.colors.brown};
 `;
 
-export const Span = styled.span`
-    font-weight: ${p => p.theme.fontWeights.bold};
-    font-size: ${p => p.theme.fontSizes.ml};
-
-    color: ${p => p.theme.colors.lightblue};
-`;
+export const Span = styled.span``;
 
 export const ButtonStyled = styled.button`
-    width: ${p => p.theme.space[7]}px;
+  display: inline-block;
 
-    border: none;
-    font: inherit;
-    cursor: pointer;
+  height: 100%;
+  width: 160px;
+  padding: 11px 0px;
+  outline: 2px solid ${(p) => p.theme.colors.brown};
+  border-radius: 5px;
+
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.375;
+  letter-spacing: 1;
+  font-family: "Merriweather", serif;
+  font-size: ${(p) => p.theme.fontSizes.s};
+  font-weight: ${(p) => p.theme.fontWeights.bold};
+  color: ${(p) => p.theme.colors.brown};
+
+  transition: all 200ms ease;
+
+  &:hover {
+    color: ${(p) => p.theme.colors.white};
+    background-color: ${(p) => p.theme.colors.brown};
     outline: none;
-    margin-left: auto;
-    border-radius: ${p => p.theme.radii.normal};
-    padding: ${p => p.theme.space[3]}px ${p => p.theme.space[4]}px;
-    background-color: ${p => p.theme.colors.lightblue};
-    color: ${p => p.theme.colors.white};
 
-    &:hover,
-    &:focus {
-    background-color: ${p => p.theme.colors.blue};
-    }
-
-    &:active {
-    ${p => p.theme.shadows.second};
-    }
+    transition: all 200ms ease;
+  }
 `;
