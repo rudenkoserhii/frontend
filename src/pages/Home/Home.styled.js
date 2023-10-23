@@ -15,12 +15,20 @@ export const Wrapper = styled.div`
   background-size: cover;
 
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 200px);
 
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    height: calc(100vh - 150px);
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: calc(100vh - 80px);
+  }
 `;
 
 export const Title = styled.h1`
@@ -30,21 +38,39 @@ export const Title = styled.h1`
   line-height: 1.25;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.xxl};
+  font-size: ${(p) => p.theme.fontSizes.l};
   font-weight: ${(p) => p.theme.fontWeights.bold};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xl};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xxl};
+  }
 `;
 
 export const Paragraph = styled.p`
   color: ${(p) => p.theme.colors.white};
 
-  margin: 0px 300px 30px 300px;
+  margin: 0px 20px 30px 20px;
 
   text-align: center;
   line-height: 1.333;
   letter-spacing: -0.2%;
   font-family: "Lato", sans-serif;
-  font-size: ${(p) => p.theme.fontSizes.l};
+  font-size: ${(p) => p.theme.fontSizes.m};
   font-weight: ${(p) => p.theme.fontWeights.normal};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.ml};
+    margin: 0px 100px 30px 100px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.l};
+    margin: 0px 300px 30px 300px;
+  }
 `;
 
 export const Button = styled(NavLink)`
@@ -65,10 +91,18 @@ export const Button = styled(NavLink)`
   vertical-align: center;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.ml};
+  font-size: ${(p) => p.theme.fontSizes.m};
   font-weight: ${(p) => p.theme.fontWeights.bold};
 
   transition: all 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.m};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.ml};
+  }
 
   &:hover {
     color: ${(p) => p.theme.colors.white};

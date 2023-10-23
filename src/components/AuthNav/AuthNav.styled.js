@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 export const NavLinkStyled = styled(NavLink)`
   display: inline-block;
 
-  height: 100%;
-  width: 160px;
+  height: auto;
+  width: 120px;
   padding: 11px 0px;
   outline: 2px solid ${(p) => p.theme.colors.brown};
   border-radius: 5px;
@@ -15,11 +15,26 @@ export const NavLinkStyled = styled(NavLink)`
   line-height: 1.375;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.s};
+  font-size: ${(p) => p.theme.fontSizes.xs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   color: ${(p) => p.theme.colors.brown};
 
   transition: all 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    padding: 11px 0px;
+
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 100%;
+    width: 160px;
+    padding: 11px 0px;
+
+    font-size: ${(p) => p.theme.fontSizes.s};
+  }
 
   &.active {
     color: ${(p) => p.theme.colors.white};
@@ -40,5 +55,15 @@ export const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  flex-direction: column;
+  gap: 5px;
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 10px;
+  }
 `;

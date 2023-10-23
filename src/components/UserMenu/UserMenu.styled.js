@@ -4,7 +4,17 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+flex-direction: column;
   gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    gap: 10px;
+  }
 `;
 
 export const Text = styled.p`
@@ -22,6 +32,14 @@ export const Text = styled.p`
   font-size: ${(p) => p.theme.fontSizes.s};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   color: ${(p) => p.theme.colors.brown};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.s};
+  }
 `;
 
 export const Span = styled.span``;
@@ -46,6 +64,21 @@ export const ButtonStyled = styled.button`
   background-color: transparent;
 
   transition: all 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    width: 140px;
+    padding: 11px 0px;
+
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 100%;
+    width: 160px;
+    padding: 11px 0px;
+
+    font-size: ${(p) => p.theme.fontSizes.s};
+  }
 
   &:hover {
     color: ${(p) => p.theme.colors.white};
