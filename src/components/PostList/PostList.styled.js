@@ -1,20 +1,17 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  /* width: 360px; */
   max-width: 360px;
   margin: 0px auto;
   padding: 0px 40px 10px 40px;
 
   @media screen and (min-width: 768px) {
-    /* width: 768px; */
     max-width: 768px;
 
     padding: 0px 60px 20px 60px;
   }
 
   @media screen and (min-width: 1440px) {
-    /* width: 1440px; */
     max-width: 1440px;
 
     padding: 0px 80px 12px 80px;
@@ -35,6 +32,7 @@ export const PostListStyled = styled.ul`
 
   @media screen and (min-width: 1440px) {
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
   }
 `;
