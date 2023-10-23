@@ -3,8 +3,16 @@ import { PostStyled, DataBox, DataStyled, NameStyled } from "./Post.styled";
 import PropTypes from "prop-types";
 
 export const Post = ({ image, title, price, ticket, yeld, days, sold }) => {
+  // function onClickHandler(e) {
+  //   e.target.classList.toggle("flip-scale-up-hor");
+  // }
+
   return (
-    <PostStyled href="" $picture={`data:image/jpg;base64,${image}`}>
+    <PostStyled
+      href="#"
+      $picture={`data:image/jpg;base64,${image}`}
+      // onClick={onClickHandler}
+    >
       <NameStyled>{title}</NameStyled>
       <DataBox>
         <DataStyled>{`${splitNumber(price)} Dhs`}</DataStyled>
