@@ -31,9 +31,10 @@ export const LoginForm = () => {
 
   return (
     <Wrapper>
-      <Background className="slide-in-left" />
+      <Background //className="slide-in-left"//
+      />
       <FormStyled
-        className="slide-in-blurred-right"
+        // className="slide-in-blurred-right"
         onSubmit={handleSubmit}
         autoComplete="off"
       >

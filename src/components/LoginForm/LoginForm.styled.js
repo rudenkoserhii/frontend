@@ -15,8 +15,16 @@ export const LabelStyled = styled.label`
   line-height: 1.4294;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.xs};
+  font-size: ${(p) => p.theme.fontSizes.xxs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xxs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
 `;
 
 export const ButtonStyled = styled.button`
@@ -33,13 +41,22 @@ export const ButtonStyled = styled.button`
   line-height: 1.375;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.s};
+  font-size: ${(p) => p.theme.fontSizes.xs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
 
   background-color: ${(p) => p.theme.colors.brown};
   color: ${(p) => p.theme.colors.white};
 
   transition: all 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.s};
+  }
+
   &:hover,
   &:focus {
     background-color: ${(p) => p.theme.colors.white};
@@ -53,12 +70,18 @@ export const ButtonStyled = styled.button`
 export const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
-  width: 350px;
-  min-width: 350px;
-  max-width: 350px;
+  width: 340px;
 
-  gap: ${(p) => p.theme.space[2]}px;
-  margin: auto 100px;
+  margin: auto 10px;
+
+  @media screen and (min-width: 768px) {
+    width: calc((100vw - 200px) / 2);
+    margin: auto 100px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: calc((100vw / 3 - 200px));
+  }
 `;
 
 export const InputStyled = styled.input`
@@ -76,21 +99,44 @@ export const InputStyled = styled.input`
   line-height: 1.571;
   letter-spacing: 1;
   font-family: "Lato", sans-serif;
-  font-size: ${(p) => p.theme.fontSizes.xs};
+  font-size: ${(p) => p.theme.fontSizes.xxs};
   font-weight: ${(p) => p.theme.fontWeights.normal};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xxs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
 `;
 
 export const Wrapper = styled.div`
+  position: relative;
+
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100vw;
-  max-width: 1440px;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 200px);
 
-  padding-right: 100px;
+  @media screen and (min-width: 768px) {
+    height: calc(100vh - 150px);
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: calc(100vh - 80px);
+
+    padding-right: 100px;
+  }
 `;
 
 export const Background = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
   background-image: image-set(
     url(${auth_1x}) 1x,
     url(${auth_2x}) 2x,
@@ -100,8 +146,25 @@ export const Background = styled.div`
   background-position: top left;
   background-size: cover;
 
-  width: calc(100vw - 550px);
-  height: calc(100vh - 80px);
+  width: 100%;
+
+  height: calc(100vh - 200px);
+
+  filter: opacity(0.3);
+
+  @media screen and (min-width: 768px) {
+    position: static;
+
+    filter: opacity(1);
+
+    width: calc(100vw / 2);
+    height: calc(100vh - 150px);
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: calc(100vw / 3 * 2);
+    height: calc(100vh - 80px);
+  }
 `;
 
 export const Title = styled.h2`
@@ -111,9 +174,18 @@ export const Title = styled.h2`
   line-height: 1.214;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.xl};
+  font-size: ${(p) => p.theme.fontSizes.ml};
   font-weight: ${(p) => p.theme.fontWeights.bold};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.l};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xl};
+  }
 `;
+
 export const Forgot = styled.a`
   margin-bottom: 10px;
 
@@ -123,11 +195,19 @@ export const Forgot = styled.a`
   line-height: 1.571;
   letter-spacing: 1;
   font-family: "Lato", sans-serif;
-  font-size: ${(p) => p.theme.fontSizes.xs};
+  font-size: ${(p) => p.theme.fontSizes.xxs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   cursor: pointer;
 
   transition: all 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xxs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
 
   &:hover,
   &:focus {
@@ -148,20 +228,37 @@ export const Span = styled.span`
   line-height: 1.571;
   letter-spacing: 1;
   font-family: "Lato", sans-serif;
-  font-size: ${(p) => p.theme.fontSizes.xs};
+  font-size: ${(p) => p.theme.fontSizes.xxs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xxs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
 `;
+
 export const Link = styled(NavLink)`
   color: ${(p) => p.theme.colors.brown};
 
   line-height: 1.571;
   letter-spacing: 1;
   font-family: "Lato", sans-serif;
-  font-size: ${(p) => p.theme.fontSizes.xs};
+  font-size: ${(p) => p.theme.fontSizes.xxs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   cursor: pointer;
 
   transition: all 200ms ease;
+
+  @media screen and (min-width: 768px) {
+    font-size: ${(p) => p.theme.fontSizes.xxs};
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: ${(p) => p.theme.fontSizes.xs};
+  }
 
   &:hover,
   &:focus {

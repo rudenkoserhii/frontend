@@ -16,6 +16,7 @@ export const theme = {
     monospace: "Menlo, monospace",
   },
   fontSizes: {
+    xxs: "10px",
     xs: "14px",
     s: "16px",
     m: "18px",

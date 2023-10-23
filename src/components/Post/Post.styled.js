@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const PostStyled = styled.a`
   display: block;
 
-  height: 40px;
+  height: 70px;
   width: 315px;
   border-radius: 5px;
 
-  padding: 150px 22.5px 10px 22.5px;
+  padding: 120px 22.5px 10px 22.5px;
 
   background-image: url(${(props) => props.$picture});
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@ export const NameStyled = styled.p`
   line-height: 1.7;
   letter-spacing: 1;
   font-family: "Merriweather", serif;
-  font-size: ${(p) => p.theme.fontSizes.s};
+  font-size: ${(p) => p.theme.fontSizes.xs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
 
   color: ${(p) => p.theme.colors.white};
@@ -63,7 +63,7 @@ export const DataStyled = styled.li`
   line-height: 1.222;
   letter-spacing: 1;
   font-family: "Lato", sans-serif;
-  font-size: ${(p) => p.theme.fontSizes.xs};
+  font-size: ${(p) => p.theme.fontSizes.xxs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
 
   color: ${(p) => p.theme.colors.white};
@@ -78,7 +78,11 @@ export const DataStyled = styled.li`
   }
 
   &:not(:nth-child(3n)) {
-    margin-right: 60px;
+    margin-right: 30px;
+
+    @media screen and (min-width: 768px) {
+      margin-right: 60px;
+    }
   }
 
   &:nth-last-child(-n + 2) {
