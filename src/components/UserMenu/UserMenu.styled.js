@@ -43,6 +43,7 @@ export const ButtonStyled = styled.button`
   font-size: ${(p) => p.theme.fontSizes.s};
   font-weight: ${(p) => p.theme.fontWeights.bold};
   color: ${(p) => p.theme.colors.brown};
+  background-color: transparent;
 
   transition: all 200ms ease;
 

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import hero_1x from "../../assets/images/background_hero_x1.png";
 import hero_2x from "../../assets/images/background_hero_x2.png";
 import hero_3x from "../../assets/images/background_hero_x3.png";
+import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
   background-image: image-set(
@@ -46,7 +47,7 @@ export const Paragraph = styled.p`
   font-weight: ${(p) => p.theme.fontWeights.normal};
 `;
 
-export const Button = styled.a`
+export const Button = styled(NavLink)`
   all: unset;
   color: ${(p) => p.theme.colors.white};
   background-color: transparent;

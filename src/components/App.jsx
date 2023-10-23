@@ -7,7 +7,8 @@ import { RestrictedRoute } from "./RestrictedRoute";
 const HomePage = lazy(() => import("../pages/Home/Home"));
 const RegisterPage = lazy(() => import("../pages/Register/Register"));
 const LoginPage = lazy(() => import("../pages/Login/Login"));
-const CardsPage = lazy(() => import("../pages/Cards/Cards"));
+const ForgotPage = lazy(() => import("../pages/Forgot/Forgot"));
+const PostsPage = lazy(() => import("../pages/Posts/Posts"));
 
 export const App = () => {
   return (
@@ -16,21 +17,27 @@ export const App = () => {
         <Route index element={<HomePage />} />
         <Route path="*" element={<HomePage />} />
         <Route
-          path="/signup"
+          path="/auth/signup"
           element={
-            <RestrictedRoute redirectTo="/cards" component={<RegisterPage />} />
+            <RestrictedRoute redirectTo="/posts" component={<RegisterPage />} />
           }
         />
         <Route
-          path="/login"
+          path="/auth/login"
           element={
-            <RestrictedRoute redirectTo="/cards" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/posts" component={<LoginPage />} />
           }
         />
         <Route
-          path="/cards"
+          path="/auth/forgot"
           element={
-            <PrivateRoute redirectTo="/login" component={<CardsPage />} />
+            <RestrictedRoute redirectTo="/posts" component={<ForgotPage />} />
+          }
+        />
+        <Route
+          path="/posts"
+          element={
+            <PrivateRoute redirectTo="/auth/login" component={<PostsPage />} />
           }
         />
       </Route>

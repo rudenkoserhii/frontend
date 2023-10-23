@@ -2,6 +2,7 @@ import styled from "styled-components";
 import auth_1x from "../../assets/images/background_auth_x1.png";
 import auth_2x from "../../assets/images/background_auth_x2.png";
 import auth_3x from "../../assets/images/background_auth_x3.png";
+import { NavLink } from "react-router-dom";
 
 export const LabelStyled = styled.label`
   display: flex;
@@ -150,7 +151,7 @@ export const Span = styled.span`
   font-size: ${(p) => p.theme.fontSizes.xs};
   font-weight: ${(p) => p.theme.fontWeights.bold};
 `;
-export const Link = styled.a`
+export const Link = styled(NavLink)`
   color: ${(p) => p.theme.colors.brown};
 
   line-height: 1.571;

@@ -46,13 +46,11 @@ export const RegisterForm = () => {
           Password
           <InputStyled placeholder="Password" type="password" name="password" />
         </LabelStyled>
-        <Forgot style={{ opacity: "0", pointerEvents: "none" }}>
-          Forgot password?
-        </Forgot>
+        <Forgot style={{ opacity: "0", pointerEvents: "none" }}></Forgot>
         <ButtonStyled type="submit">Sign Up</ButtonStyled>
         <Text>
           <Span>Have an account?</Span>
-          <Link href="./login">Log In</Link>
+          <Link to="/auth/login">Log In</Link>
         </Text>
       </FormStyled>
     </Wrapper>

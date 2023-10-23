@@ -24,6 +24,7 @@ export const NavLinkStyled = styled(NavLink)`
   &.active {
     color: ${(p) => p.theme.colors.white};
     background-color: ${(p) => p.theme.colors.brown};
+    pointer-events: none;
   }
 
   &:hover:not(.active) {

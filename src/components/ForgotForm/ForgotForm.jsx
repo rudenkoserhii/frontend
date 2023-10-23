@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { logIn } from "../../redux/auth/operations";
+import { forgot } from "../../redux/auth/operations";
 import {
   FormStyled,
   LabelStyled,
@@ -12,16 +12,16 @@ import {
   Text,
   Span,
   Link,
-} from "./LoginForm.styled";
+} from "../LoginForm/LoginForm.styled";
 
-export const LoginForm = () => {
+export const ForgotForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.currentTarget;
     dispatch(
-      logIn({
+      forgot({
         email: form.elements.email.value,
         password: form.elements.password.value,
       })
@@ -37,7 +37,7 @@ export const LoginForm = () => {
         onSubmit={handleSubmit}
         autoComplete="off"
       >
-        <Title>Login</Title>
+        <Title>Change password</Title>
         <LabelStyled>
           Email
           <InputStyled placeholder="Email" type="email" name="email" />
@@ -46,8 +46,8 @@ export const LoginForm = () => {
           Password
           <InputStyled placeholder="Password" type="password" name="password" />
         </LabelStyled>
-        <Forgot href="/auth/forgot">Forgot password?</Forgot>
-        <ButtonStyled type="submit">Sign In</ButtonStyled>
+        <Forgot style={{ opacity: "0", pointerEvents: "none" }}></Forgot>
+        <ButtonStyled type="submit">Submit</ButtonStyled>
         <Text>
           <Span>Don’t have account?</Span>
           <Link to="/auth/signup">Sign Up</Link>

@@ -10,7 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { cardsReducer } from "./cards/slice";
+import { postsReducer } from "./posts/slice";
 import { authReducer } from "./auth/slice";
 
 const middleware = (getDefaultMiddleware) => [
@@ -31,7 +31,7 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    cards: cardsReducer,
+    posts: postsReducer,
   },
   middleware,
   devTools: process.env.NODE_ENV === "development",

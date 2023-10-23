@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.header`
@@ -15,9 +16,12 @@ export const HeaderStyled = styled.div`
   height: 44px;
   max-width: 1440px;
   padding: 18px 80px;
+
+  margin-left: auto;
+  margin-right: auto;
 `;
 
-export const Link = styled.a`
+export const Link = styled(NavLink)`
   height: 100%;
   width: auto;
 `;
@@ -25,4 +29,5 @@ export const Link = styled.a`
 export const Logo = styled.img`
   height: 100%;
   width: auto;
+  object-fit: contain;
 `;

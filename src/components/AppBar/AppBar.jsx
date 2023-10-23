@@ -6,11 +6,11 @@ import logo from "../../assets/images/logo.png";
 
 export const AppBar = () => {
   const { isLoggedIn } = useAuth();
-
+  console.log(isLoggedIn);
   return (
     <Wrapper>
       <HeaderStyled>
-        <Link href="./">
+        <Link to="/">
           <Logo src={logo} alt={"logo"} />
         </Link>
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
