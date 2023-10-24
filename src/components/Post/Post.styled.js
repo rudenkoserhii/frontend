@@ -22,14 +22,14 @@ export const PostStyled = styled.a`
     padding: 300px 14px 20px 14px;
 
     height: 80px;
-    width: 742px;
+    width: 620px;
   }
 
   @media screen and (min-width: 1440px) {
     padding: 300px 14px 20px 14px;
 
     height: 80px;
-    width: calc((1440px - 20px) / 2 - 28px);
+    width: calc((1440px - 20px - 160px) / 2 - 28px);
   }
 
   &:hover {
