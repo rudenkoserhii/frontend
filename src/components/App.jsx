@@ -43,12 +43,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="*" element={<HomePage />} />
-          <Route
-            path="api/docs"
-            element={
-              <RestrictedRoute redirectTo="/api/docs" component={<ApiDocs />} />
-            }
-          />
+          <Route path="api/docs" element={<ApiDocs />} />
           <Route
             path="/auth/signup"
             element={
