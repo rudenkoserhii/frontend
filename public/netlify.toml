@@ -2,8 +2,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[redirects]]
-  from = "/api/docs"
-  to = "/api/docs"
-  status = 200

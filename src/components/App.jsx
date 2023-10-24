@@ -7,6 +7,7 @@ import { RestrictedRoute } from "./RestrictedRoute";
 import { refreshUser } from "../redux/auth/operations";
 import { useAuth } from "../hooks";
 import MoonLoader from "react-spinners/ClipLoader";
+import { ApiDocs } from "../ApiDocs/ApiDocs";
 
 const HomePage = lazy(() => import("../pages/Home/Home"));
 const RegisterPage = lazy(() => import("../pages/Register/Register"));
@@ -42,6 +43,12 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="*" element={<HomePage />} />
+          <Route
+            path="api-docs"
+            element={
+              <RestrictedRoute redirectTo="/api-docs" component={<ApiDocs />} />
+            }
+          />
           <Route
             path="/auth/signup"
             element={
